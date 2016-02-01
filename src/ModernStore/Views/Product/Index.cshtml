@@ -1,0 +1,14 @@
+﻿@model ModernStore.ViewModel.ProductsViewModel
+@using ModernStore.ViewModel
+@{ 
+    ViewBag.Title = "Products";
+}
+
+<ul>
+    @foreach (ProductsViewModel.ProductItem product in Model.Products)
+    {
+        <li>
+            @Html.ActionLink(product.Title, "Item", new { id = product.ID })
+        </li>
+    }
+</ul>
